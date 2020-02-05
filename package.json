@@ -1,0 +1,31 @@
+{
+  "name": "Lab-Class-11",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/401-advanced-javascript-dania/Lab-Class-11.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/401-advanced-javascript-dania/Lab-Class-11/issues"
+  },
+  "homepage": "https://github.com/401-advanced-javascript-dania/Lab-Class-11#readme",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemon": "^2.0.2"
+  }
+}
