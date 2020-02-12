@@ -29,3 +29,7 @@ non
 
 Link to an image of the UML for your application and response to events
 - [UML]()
+
+####  My environment variables
+SECRET=cool
+MONGODB_URI=mongodb://localhost:27017/class11
