@@ -28,8 +28,4 @@ non
 #### UML
 
 Link to an image of the UML for your application and response to events
-- [UML]()
-
-####  My environment variables
-SECRET=cool
-MONGODB_URI=mongodb://localhost:27017/class11
+- [UML](https://github.com/401-advanced-javascript-dania/Lab-Class-11/blob/withMongo/IMG_20200212_193036.jpg)
