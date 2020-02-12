@@ -2,7 +2,7 @@
 'use stirct';
 const express = require('express');
 const basicOfAuth=require('./basic-auth-middleware.js');
-const users = require('./users.js');
+const Users = require('./users.js');
 const app =express();
 //global middleware 
 app.use(express.json());
@@ -10,11 +10,14 @@ app.use(express.json());
 app.post('/signup',(req,res)=>{
     //req.body have a basic information (user information)
     //it will create an object with username and hashed password
-users.userInfoSave(req.body)
+    let users = new Users(req.body)
+    users.save()
+// users.userInfoSave(req.body)
 // it an extra code no need for it , it will just show us the token
  .then(username=>{
-     let token =users.tokenGeneration(username);
-     res.status(200).json(token)
+     req.token =username.tokenGenerationForSignup(username);
+     req.user=username
+     res.status(200).json(req.token)
  })
 })
 // basicOfAuth is route level middleware
@@ -28,4 +31,10 @@ res.status(200).send(req.token)
 app.get('/users',basicOfAuth,(req,res)=>{
     res.status(200).json(users.list())
 })
-app.listen(3000,()=> console.log('server up ',3000))
+module.exports={
+    server:app,
+    start: port =>{
+        let PORT=port||process.env.PORT||3000;
+        app.listen(PORT,()=>console.log(`server up on ${PORT}`))
+    }
+}

@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint '**/*.js'",
     "test": "jest --verbose --coverage",
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "jest": "^25.1.0",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.11",
     "nodemon": "^2.0.2"
   }
 }

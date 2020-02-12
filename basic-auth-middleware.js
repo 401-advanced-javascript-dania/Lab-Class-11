@@ -13,13 +13,17 @@ let basicAuthMiddleware=function (req,res,next) {
     //['dania','12345']
     let [user,password] = base64.decode(basicAuth).split(':');
     console.log('[user,password] ',[user,password] )
+    let auth ={user , password};
+    console.log('auth',auth)
+
     // it will be comparing the password and it will return username
-    users.basicOfAuthenticate(user,password)
+    users.auth(auth)
     .then(goodUser=>{
         // create a token to the request , the token will authorize me to access to specific route
-        req.token=users.tokenGeneration(goodUser)
+        req.token=users.tokenGenerationForSignin(goodUser)
         console.log('token',req.token)
         next();
-    }).catch(err=> next('cannot login'));
+    })
+    // .catch(err=> next('cannotlogin'));
 }
 module.exports=basicAuthMiddleware;
